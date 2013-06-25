@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:pullrefresh="http://schemas.android.com/apk/res/com.banking.pullrefresh"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    <!-- 页头 -->
+
+    <!-- 整屏滚动 -->
+    <com.banking.pullrefresh.PullRefreshLayout
+        android:id="@+id/pull_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="none"
+        pullrefresh:actionViewId="@+id/action_view"
+        pullrefresh:toolViewId="@+id/tool_view"
+       >
+       <!--     -->
+        <include
+            android:id="@+id/action_view"
+            layout="@layout/pull_refresh_refresh_layout" />
+
+        <include
+            android:id="@+id/tool_view"
+            layout="@layout/pull_refresh_tool_layout" />
+
+        <ScrollView
+            android:id="@+id/home_main_scroller"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:minHeight="800dp"
+            android:scrollbars="none" >
+
+            <RelativeLayout
+                android:id="@+id/home_content"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp" >
+
+                <!-- 加载中 -->
+
+                <LinearLayout
+                    android:id="@+id/home_loading"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:visibility="visible" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/content_tv"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:gravity="center"
+                            android:padding="10dp" >
+                        </TextView>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- 加载失败提示框 -->
+
+                <LinearLayout
+                    android:id="@+id/home_load_failed"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/home_loading"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
+
+                    <!-- 加载失败提示框图片 -->
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/home_no_network_icon" />
+                    <!-- 加载失败提示框文字 -->
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:lineSpacingExtra="5dp"
+                        android:layout_marginTop="1dp"
+                        android:textSize="14sp"
+                        android:text="网络错误" >
+                    </TextView>
+                </LinearLayout>
+
+                <!-- 促销栏轮波图 -->
+
+                <!-- 动态加载容器 -->
+
+                <LinearLayout
+                    android:id="@+id/home_index_content"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:orientation="vertical"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp" >
+                </LinearLayout>
+
+
+            </RelativeLayout>
+        </ScrollView>
+    </com.banking.pullrefresh.PullRefreshLayout>
+
+</RelativeLayout>

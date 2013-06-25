@@ -1,0 +1,10 @@
+<resources>
+
+    <string name="app_name">下拉刷新Demo</string>
+    
+    <string name="note_pull_down">往下拉更新数据&#8230;</string>
+    <string name="note_pull_refresh">放开更新数据&#8230;</string>
+    <string name="note_pull_loading">更新中&#8230;</string>
+    <string name="note_update_at">上一次更新：%1$s</string>
+    <string name="note_not_update">尚未更新</string>
+</resources>

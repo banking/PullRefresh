@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources> 
+    <!-- 下拉刷新 -->
+    <declare-styleable name="pullrefresh">
+        <attr name="actionViewId" format="reference" />
+        <attr name="toolViewId" format="reference" />
+    </declare-styleable>
+</resources>
